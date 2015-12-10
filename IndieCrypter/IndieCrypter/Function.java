@@ -14,8 +14,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.Scanner;
-
 public class Function {
 	//JfileChooser will be used when to pop up selecting file or creating new files
 	JFileChooser fC = new JFileChooser();
@@ -168,25 +166,23 @@ public class Function {
 					}
 				}
 			}
-			
-			
+			//Exporting image as png.
+			if(encData.length() ==counter){
+				if(fC1.showOpenDialog(null)==JFileChooser.APPROVE_OPTION){
+					try{
+						File file = new File(fC1.getSelectedFile(),"");
+						ImageIO.write(image, "png", file);
+					}catch(Exception e){
+						JOptionPane.showMessageDialog(null, "ERRRROORRRR");
+					}
+				}
+			}else{
+				JOptionPane.showMessageDialog(null, "PLZ don exploit the program..");
+			}
 		}catch(Exception e){
 				JOptionPane.showMessageDialog(null, "Resolution of the image is too small! Try with other picture!");
 		}
-	//Exporting image as png.
-		if(encData.length() ==counter){
-			if(fC1.showOpenDialog(null)==JFileChooser.APPROVE_OPTION){
-				try{
-					File file = new File(fC1.getSelectedFile(),"");
-					ImageIO.write(image, "png", file);
-				}catch(Exception e){
-					JOptionPane.showMessageDialog(null, "ERRRROORRRR");
-				}
-			}
-		}else{
-			System.out.println(counter);
-			JOptionPane.showMessageDialog(null, "PLZ don exploit the program..");
-		}
+		
 	}
 	
 	public String StegaDec(){

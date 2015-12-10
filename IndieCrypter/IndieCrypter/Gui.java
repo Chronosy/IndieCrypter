@@ -161,8 +161,7 @@ public class Gui {
 				JOptionPane.OK_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE);
 		if(passwd.getText().length()!=0){
 			return buffer;
-		}
-		else{
+		}else{
 			JOptionPane.showMessageDialog(null, "Please Type password");
 			return JOptionPane.CANCEL_OPTION;
 		}
