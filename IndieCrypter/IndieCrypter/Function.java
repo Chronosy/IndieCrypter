@@ -138,8 +138,9 @@ public class Function {
 				for(int i = 0; i < colSize; i++){
 					for(int j = 0; j < 32; j++){
 						temp = intToBinary(image.getRGB(j, i));
-						temp = temp.substring(0, 31) + encData.charAt(j+(i*32));
+						temp = temp.substring(0, 31) + encData.charAt(counter);
 						image.setRGB(j, i, binaryToInt(temp));
+						counter++;
 					}
 				}
 			}else{
@@ -178,6 +179,7 @@ public class Function {
 				}
 			}else{
 				JOptionPane.showMessageDialog(null, "PLZ don exploit the program..");
+				System.out.println("DataSize:"+encData.length()+"\n"+"counter:"+counter);
 			}
 		}catch(Exception e){
 				JOptionPane.showMessageDialog(null, "Resolution of the image is too small! Try with other picture!");
