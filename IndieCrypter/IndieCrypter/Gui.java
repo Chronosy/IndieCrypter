@@ -151,7 +151,7 @@ public class Gui {
 		JLabel label = new JLabel("");
 		Image img = new ImageIcon(this.getClass().getResource("/nsa_logo.jpg")).getImage();
 		label.setIcon(new ImageIcon(img));
-		label.setBounds(529, 136, 156, 174);
+		label.setBounds(487, 138, 156, 174);
 		Stapanel.add(label);
 				
 		tP.addTab("Image", Stapanel);
